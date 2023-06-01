@@ -35,13 +35,13 @@ jobs:
         run: dotnet build --configuration Release
 
       - name:  Publish dotnet
-        run: dotnet publish -c Release -o /myapp
+        run: dotnet publish -c Release -o  ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact para deploy
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ./myapp
 
   deploy:
     permissions:
@@ -54,6 +54,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .net-app
+          path: upload_artifact
 
       - name: Deploy to Azure AppService
         id: deploy-to-webapp
