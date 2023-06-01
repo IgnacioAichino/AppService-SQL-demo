@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ./myapp
+          path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
     permissions:
