@@ -34,14 +34,16 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
+
       - name:  Publish dotnet
-        run: dotnet publish -c Release -o  ${{env.DOTNET_ROOT}}/myapp
+        run: |
+          pwd ls -la
+          dotnet publish ./src/BookStore.API/BookStore.API.csproj -c Release -o  ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact para deploy
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ./myapp
 
   deploy:
     permissions:
