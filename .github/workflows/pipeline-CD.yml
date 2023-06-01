@@ -54,7 +54,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .net-app
-          path: upload_artifact
+    
 
       - name: Deploy to Azure AppService
         id: deploy-to-webapp
