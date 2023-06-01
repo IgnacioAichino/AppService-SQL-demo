@@ -36,7 +36,7 @@ namespace BookStore.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo()
                 {
-                    Title = "BookStore API version ",
+                    Title = "BookStore API version V3 ",
                     Version = "v2"
                 });
             });
