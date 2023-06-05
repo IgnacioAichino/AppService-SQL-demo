@@ -1,6 +1,6 @@
 
 
-name: Build and deploy ASP.Net AppService
+name: Build and deploy PROD
 
 env:
   AZURE_WEBAPP_NAME: appdemoSQL    # set this to the name of your Azure Web App
